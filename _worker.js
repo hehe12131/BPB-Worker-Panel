@@ -779,9 +779,10 @@ const getNormalConfigs = async (env, hostName, client) => {
     const resolved = await resolveDNS(hostName);
     const Addresses = [
         hostName,
-        ...(cleanIPs ? cleanIPs.split(',') : []),
         
-    ];/**...resolved.ipv4,
+    ];/**
+        ...(cleanIPs ? cleanIPs.split(',') : []),
+	...resolved.ipv4,
         ...resolved.ipv6.map((ip) => `[${ip}]`),*/
 	
     Addresses.forEach((addr) => {
@@ -983,8 +984,8 @@ const getFragmentConfigs = async (env, hostName, client) => {
     const resolved = await resolveDNS(hostName);
     const Addresses = [
         hostName,
-        ...(cleanIPs ? cleanIPs.split(",") : []),
     ];/**
+        ...(cleanIPs ? cleanIPs.split(",") : []),
         ...resolved.ipv4,
         ...resolved.ipv6.map((ip) => `[${ip}]`),*/
 
@@ -1137,8 +1138,8 @@ const getSingboxConfig = async (env, hostName) => {
     const resolved = await resolveDNS(hostName);
     const Addresses = [
         hostName,
-        ...(cleanIPs ? cleanIPs.split(",") : []),
     ];/**
+        ...(cleanIPs ? cleanIPs.split(",") : []),
         ...resolved.ipv4,
         ...resolved.ipv6.map((ip) => `[${ip}]`),*/
 
