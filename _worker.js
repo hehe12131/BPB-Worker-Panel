@@ -780,10 +780,10 @@ const getNormalConfigs = async (env, hostName, client) => {
     const Addresses = [
         hostName,
         ...(cleanIPs ? cleanIPs.split(',') : []),
-        ...resolved.ipv4,
-        ...resolved.ipv6.map((ip) => `[${ip}]`),
-    ];
-
+        
+    ];/**...resolved.ipv4,
+        ...resolved.ipv6.map((ip) => `[${ip}]`),*/
+	
     Addresses.forEach((addr) => {
         let remark = `💦 BPB - ${addr}`;
         remark = remark.length <= 30 ? remark : `${remark.slice(0,29)}...`;
@@ -984,9 +984,9 @@ const getFragmentConfigs = async (env, hostName, client) => {
     const Addresses = [
         hostName,
         ...(cleanIPs ? cleanIPs.split(",") : []),
+    ];/**
         ...resolved.ipv4,
-        ...resolved.ipv6.map((ip) => `[${ip}]`),
-    ];
+        ...resolved.ipv6.map((ip) => `[${ip}]`),*/
 
     if (outProxy) {
         const proxyParams = JSON.parse(outProxyParams);
@@ -1138,9 +1138,9 @@ const getSingboxConfig = async (env, hostName) => {
     const Addresses = [
         hostName,
         ...(cleanIPs ? cleanIPs.split(",") : []),
+    ];/**
         ...resolved.ipv4,
-        ...resolved.ipv6.map((ip) => `[${ip}]`),
-    ];
+        ...resolved.ipv6.map((ip) => `[${ip}]`),*/
 
     Addresses.forEach(addr => {
         let outbound = structuredClone(singboxOutboundTemp);
